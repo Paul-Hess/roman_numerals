@@ -62,4 +62,12 @@ describe ("romanNumeral", function() {
   it("It should replace any number below and including 3999 to a Roman Numeral.", function() {
     expect(romanNumeral(28)).to.equal("XXVIII");
   });
+
+  it("It should replace any number below and including 3999 to a Roman Numeral.", function() {
+    expect(romanNumeral(666)).to.equal("DCLXVI");
+  });
+
+  it("It should replace any number below and including 3999 to a Roman Numeral.", function() {
+    expect(romanNumeral(3999)).to.equal("MMMCMXCIX");
+  });
 });

@@ -1,4 +1,3 @@
-
 var fiver = "V";
 var ones = "III";
 var tenner = "XXX";
@@ -67,3 +66,17 @@ function romanNumeral(num) {
     return getResultForOnes(numstring[0]);
   }
 }
+
+
+$(document).ready(function() {
+  $('form#forma').submit(function(event) {
+
+    var numToRom = $('input#number').val();
+    var convert = romanNumeral(numToRom);
+    $('div.jumbotron').toggle();
+    $('div.output').toggle();
+    $('span.numberchange').text(convert);
+
+  event.preventDefault();
+});
+});
