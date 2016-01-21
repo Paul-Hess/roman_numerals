@@ -55,7 +55,7 @@ function getResultForThousands(num) {
 }
 
 function romanNumeral(num) {
-  if (Number.isNaN(num)) {
+  if (typeof num !== 'number') {
     return "We can only process numerals into roman numerals";
   } else if (num > 3999) {
     return "roman numerals only go as high as 3,999, try a smaller number";
