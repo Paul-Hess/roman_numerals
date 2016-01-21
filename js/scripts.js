@@ -55,14 +55,25 @@ function getResultForThousands(num) {
 }
 
 function romanNumeral(num) {
+  if (Number.isNaN(num)) {
+    return "We can only process numerals into roman numerals";
+  } else if (num > 3999) {
+    return "roman numerals only go as high as 3,999, try a smaller number";
+  }
+
   var numstring = num.toString();
+
+  if (numstring.length > 4) {
+    return "Too many digits. Try again.";
+ }
+
   if (numstring[3]) {
     return getResultForThousands(numstring[0]) + getResultForHundreds(numstring[1]) +  getResultForTens(numstring[2]) +  getResultForOnes(numstring[3]);
   } else if (numstring[2] ) {
     return getResultForHundreds(numstring[0]) +  getResultForTens(numstring[1]) +  getResultForOnes(numstring[2]);
   } else if (numstring[1]) {
     return getResultForTens(numstring[0]) +  getResultForOnes(numstring[1]);
-  } else {
+  } else if (numstring[0]){
     return getResultForOnes(numstring[0]);
   }
 }
